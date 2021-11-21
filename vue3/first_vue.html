@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script> -->
+  </head>
+  <body>
+    <!-- 선언적 랜더링 : 간단한 템플릿 구문을 사용하여 DOM에서 데이터를 선언적으로 렌더링  -->
+    <div id="app">
+        <ul>
+            <li>머스태시 {{ product }}</li>
+            <li>v-text <span v-text="product"></span> </li>
+            <li>v-html <span v-html="product"></span></li>
+            <li>v-bind <span v-bind:class="productname">{{ product }}</span></li>
+            <li>v-model <input v-model="productname"></li>
+        </ul>
+    </div>
+
+    <script>
+    //vue instance
+    const app = Vue.createApp({
+        data() {
+            return {
+                product: '<u>Socks</u>',
+                productname: 'Socks',
+            }
+        }
+    })    
+    //mount vue
+    const mountedApp = app.mount('#app')
+    </script>
+  </body>
+</html>
