@@ -8,7 +8,8 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item" v-for="menu in menus" :key="menu.key">
-          <a class="nav-link" :class="{active : menu.key==curMenu}" :href="menu.url">{{menu.value}}</a>
+          <!-- <a class="nav-link" :class="{active : menu.key==curMenu}" :href="menu.url">{{menu.value}}</a> -->
+          <router-link class="nav-link" :to="menu.url">{{menu.value}}</router-link>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Features</a>

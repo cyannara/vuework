@@ -17,8 +17,7 @@ export default {
 <template>
   <div>
     <nav-bar/>
-    <profile/>
-    <application/>
+    <router-view></router-view>
   </div>
 </template>
 
