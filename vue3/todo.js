@@ -65,7 +65,7 @@
         }
         ,
         beforeCreate : function(){
-            fetch("../todoSelect")
+            fetch("http://localhost/prj/todoSelect")
             .then(response => response.json())
             .then(result => { this.todos = result; })
         }
