@@ -4,7 +4,7 @@ export default {
   components: {   ComponentA  }
   ,
   data(){
-    return {count : 0 }
+    return {count : 15 }
   }
   ,
   methods :{
@@ -12,13 +12,13 @@ export default {
       this.count = cnt;
     }
   }
-}
+} 
 </script>
-
+  
 <template>
 <div>
   {{count}}
-  <component-a msg='hi scott' @myEvent="countChange"></component-a>
+  <component-a msg='hi scott' :count="count" @myEvent="countChange">하위컴포넌트에 slot으로 전달</component-a>
 </div>
 </template>
 
