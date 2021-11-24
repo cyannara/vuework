@@ -7,7 +7,9 @@ export default {
 
 <template>
 <div>
-  <component-a msg='hi scott'></component-a>
+  <component-a msg='hi scott'>
+      <div>slot으로 하위 컴포넌트 배포</div>
+  </component-a>
 </div>
 </template>
 
