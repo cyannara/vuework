@@ -7,12 +7,16 @@ export default {
     ,
     emits: ['myEvent']
     ,
-    data(){
-        const store = useStore();
-        const user_data = store.getters['userinfo/user_data']
-        return {inputCnt : this.$props.count, storeMsg : user_data} 
+    computed: {
+        // const store = useStore();
+        // const user_data = store.getters['userinfo/user_data']
+        // return {inputCnt : this.$props.count, storeMsg : user_data} 
+        doneTodosCount () {
+            return this.$store.state.todos.filter(todo => todo.done).length
+        }
     }
     ,
+ 
     methods : {
         countChange(){
             this.$emit('myEvent', this.inputCnt)
