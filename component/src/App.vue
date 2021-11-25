@@ -1,14 +1,19 @@
 <script>
 import ComponentA from './components/ComponenA.vue'
-import {provide } from 'vue'
-
+// import {provide } from 'vue'
+// console.log()
 export default {
   components: {   ComponentA  }
   ,
-  provide : { provideMsg : '프로바이드로 전달' }
+  //provide : { provideMsg : '프로바이드로 전달' + this.count}
+  provide() {
+    return {
+      provideMsg : this.user
+    }
+  }
   ,
   data(){
-    return {count : 15 }
+    return {count : 15, user : {id:'', email:''} }
   }
   ,
   methods :{
