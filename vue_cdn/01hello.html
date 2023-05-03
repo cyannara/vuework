@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <div id="app">{{ message }}
+    <input v-model="member.id">
+    <input v-model="member.pw">
+    <button type="button" @click="login">로그인</button>
+    <button @click="awesome = !awesome">전환</button>
+
+    <h1 v-if="awesome">Vue는 정말 멋지죠!</h1>
+    <h1 v-else>아닌가요? 😢</h1>
+    <h1 v-show="awesome">안녕!</h1>
+    <div v-for="item in items">
+      <div>name:<span>{{item.name}}</span></div>
+      <div>price:<span>{{item.price}}</span></div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          message: 'Hello Vue!',
+          member: { id: 'choi', pw: '' },
+          awesome: true,
+          items: []
+        }
+      },
+      methods: {
+        login() {
+          console.table(this.member);
+        }
+      },
+      mounted: function () {
+        // $.ajax( success:function(result){
+        //   this.items = results;
+        // })
+        this.items = [{ name: '자바', price: 500 },
+        { name: '스프링', price: 400 },
+        { name: '자바', price: 300 }]
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    span {
+      display: inline-block;
+      width: 15%
+    }
+  </style>
+</head>
+
+<body>
+  <div id="my-app">
+    <div v-bind="objectOfAttrs">ytest</div>
+    <div>
+      <span><router-link to="/main">main</router-link></span>
+      <span><router-link to="/login">login</router-link></span>
+      <span><router-link to="/signin">sign in</router-link></span>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader/dist/vue3-sfc-loader.js"></script>
+  <script src="https://unpkg.com/vue-router@4.0.15/dist/vue-router.global.js"></script>
+  <script src="vue_common.js"></script>
+  <script type="text/javascript">
+
+    const routes = [
+      { path: '/login', component: Vue.defineAsyncComponent(() => loadModule('./login.vue', options)) },
+      { path: '/signin', component: Vue.defineAsyncComponent(() => loadModule('./signin.vue', options)) },
+      { path: '/main', component: Vue.defineAsyncComponent(() => loadModule('./my-component.vue', options)) },
+    ]
+
+    const router = VueRouter.createRouter({
+      // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+      history: VueRouter.createWebHashHistory(),
+      routes, // short for `routes: routes`
+    });
+
+
+    const app = createApp({
+      components: {
+        'my-component': Vue.defineAsyncComponent(() => loadModule('./my-component.vue', options))
+      },
+      data() {
+        return {
+          message: 'hello vue!',
+          objectOfAttrs: {
+            id: 'container',
+            class: 'wrapper'
+          }
+        }
+      },
+      mounted() {
+        console.log(`the component is now mounted.`)
+        this.$router.push('/main')
+      }
+    })
+    app.use(router);
+    app.mount('#my-app')
+  </script>
+</body>
+
+</html>
