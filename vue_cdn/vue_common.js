@@ -17,5 +17,4 @@ const options = {
         document.head.insertBefore(style, ref);
       },
     }
-    const { loadModule } = window['vue3-sfc-loader'];
-    const { createApp } = Vue;
+const { loadModule } = window['vue3-sfc-loader'];

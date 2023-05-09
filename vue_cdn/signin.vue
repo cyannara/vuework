@@ -5,7 +5,7 @@
     <input><br>
     <input><br>
     <input><br>
-    <button>등록</button>
+    <button type="button" @click="register">등록</button>
 </div>
 </template>
 
@@ -14,6 +14,12 @@ module.exports = {
     data: function() {
         return {
             who: 'world'
+        }
+    },
+    methods : {
+        register(){
+           console.log("가입완료");
+           this.$router.push("/login") 
         }
     }
 }
