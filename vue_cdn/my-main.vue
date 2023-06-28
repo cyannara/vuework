@@ -1,6 +1,7 @@
 <template>
     <div class="hello">
-        Hello {{who}}   <p v-html="who">
+        Hello {{who}}   
+        <p v-html="who">
     </div>
 </template>
 
