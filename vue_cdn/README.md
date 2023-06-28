@@ -4,6 +4,23 @@
 [vue quick start](https://v3-docs.vuejs-korea.org/guide/quick-start.html)  
 
 ## json
+  object : { }    
+           {"필드명":값, ....   }  
+           값은 number, string, object, array 등이 올 수 있음  
+
+  array : [ ]  
+            [ number, string, object, array ]  
+```javascript
+let name="aaa"
+let age=10
+let obj1 = {"name":name, "age":Age} 
+let obj2 = {name, age}    //축약형
+
+let obj3 = {"name":name, "getName":function(){} }
+let obj4 = {name, getName(){     } }    //축약형
+
+//{ data(){}  }   =>   {data : function(){ }}
+```
 
 ## instance (참조:00instance.html)
 
