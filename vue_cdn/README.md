@@ -4,12 +4,11 @@
 [vue quick start](https://v3-docs.vuejs-korea.org/guide/quick-start.html)  
 
 ## json
-  object : { }    
-           {"필드명":값, ....   }  
-           값은 number, string, object, array 등이 올 수 있음  
+json은 데이터 교환하기 위한 객체 표기법으로서 {}, [] 기호를 사용함
+ - object : { } ,  {"필드명":값, ....   }  
+ - array : [], [ 값, ... ]  
+ - 값에는 number, string, object, array 등이 올 수 있다.
 
-  array : [ ]  
-            [ number, string, object, array ]  
 ```javascript
 let name="aaa"
 let age=10
