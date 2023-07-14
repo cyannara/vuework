@@ -7,7 +7,7 @@ const routes = [{
   component: Vue.defineAsyncComponent(() => loadModule('./my-signin.vue', options))
 },
 {
-  path: '/main',
+  path: '/',
   component: Vue.defineAsyncComponent(() => loadModule('./my-main.vue', options))
 },
 ]

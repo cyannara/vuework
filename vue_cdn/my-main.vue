@@ -1,19 +1,19 @@
-<template>
-    <div class="hello">
-        Hello {{who}}   
-        <p v-html="who">
-    </div>
-</template>
-
 <script>
-module.exports = {
-    data: function() {
+export default {
+    data() {
         return {
             who: 'world!!!'
         }
     }
 }
 </script>
+
+<template>
+    <div class="hello">
+        Hello {{who}}   
+        <p v-html="who">
+    </div>
+</template>
 
 <style>
 .hello {

@@ -35,13 +35,20 @@ Vue는 컴포넌트 인스턴스의 데이터를 서술적으로 렌더링된 DO
 </pre>
 
 ## event (03event.html, 04bindingEvent.html)
-event.preventDefault()  : 전파중지  
-event.stopPropagation() : submit, a  
+- @click.prevent :  event.preventDefault()  
+- @click.stop : event.stopPropagation()
+  : submit, a  
+
 
 ## 제어문 (05controll.html)
 
+
 ## fetch (06bindingFetch.html)
+
 
 ## component (10component.html)
 
+
 ## router (11router.html)
+- this.$route.params.username
+- this.$router.push('/login')

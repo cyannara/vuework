@@ -1,18 +1,19 @@
 <script>
 export default {
-      data() {
+      data() {   //바인딩
         return {
           products: [],
           cart: []
         }
       },
-      mounted() {
+      mounted() {     //dom객체 생성 후호출
         console.log("mount 됨");
         fetch("product.json")
         .then(res=>res.json())
-        .then(res=>this.products = res)
+        .then(res=>this.products = res);
+        console.log("aaaaa"+this.$store.state.count)
       },
-      methods: {
+      methods: {    //이벤트 핸들러
         addCart(name) {
             this.cart.push(name);
             alert("장바구니")
