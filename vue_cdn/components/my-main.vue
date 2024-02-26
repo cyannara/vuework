@@ -11,7 +11,7 @@ export default {
 <template>
     <div class="hello">
         Hello {{who}}   
-        <p v-html="who">
+        <p v-html="who"></p>
     </div>
 </template>
 

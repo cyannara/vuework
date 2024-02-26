@@ -20,7 +20,7 @@
   <script>   
     const app = Vue.createApp({
       components: {
-        'my-product': Vue.defineAsyncComponent(() => loadModule('./my-product.vue', options))
+        'my-product': Vue.defineAsyncComponent(() => loadModule('./components/my-product.vue', options))
       }
     });
     app.mount('#app');

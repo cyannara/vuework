@@ -1,14 +1,20 @@
+//component: Vue.defineAsyncComponent(() => loadModule('./components/my-signin.vue', options))
+
 const routes = [{
   path: '/product',
-  component: Vue.defineAsyncComponent(() => loadModule('./my-product.vue', options))
+  component: (() => loadModule('./components/my-product.vue', options))
+},
+{
+  path: '/productState',
+  component: (() => loadModule('./components/my-product-state.vue', options))
 },
 {
   path: '/signin',
-  component: Vue.defineAsyncComponent(() => loadModule('./my-signin.vue', options))
+  component: (() => loadModule('./components/my-signin.vue', options))
 },
 {
   path: '/',
-  component: Vue.defineAsyncComponent(() => loadModule('./my-main.vue', options))
+  component: (() => loadModule('./components/my-main.vue', options))
 },
 ]
 

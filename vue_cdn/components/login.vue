@@ -4,7 +4,8 @@
         <input v-model="member.id">
         <input v-model="member.pw">
         <button type="button" @click="login">login</button>
-    <button type="button" @click="gopage">회원가입</button>
+        <button type="button" @click="gopage">회원가입</button>
+    </form>
 </div>
 </template>
 

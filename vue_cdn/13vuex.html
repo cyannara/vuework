@@ -20,8 +20,8 @@
   <div id="app">
     <ul class="nav">
       <li class="nav-item"><router-link to="/" class="nav-link active" >main</router-link></li>
-      <li class="nav-item"><router-link to="/signin" class="nav-link" >login</router-link></li>
-      <li class="nav-item"><router-link to="/product" class="nav-link" >product</router-link></li>
+      <li class="nav-item"><router-link to="/signin" class="nav-link" >signin</router-link></li>
+      <li class="nav-item"><router-link to="/productState" class="nav-link" >product</router-link></li>
     </ul>
 
     <div class="border p-5">
@@ -30,30 +30,30 @@
   </div>
 
   <script type="text/javascript">
-    const {  createApp  } = Vue;
-    const {  createStore  } = Vuex;
+  const {  createApp  } = Vue;
+  const {  createStore  } = Vuex;
 
-    // Create a new store instance.
-const store = createStore({
-  state () {
-    return {
-      count: 0
+  // Create a new store instance.
+  // 공통의 상태를 공유하는 여러 컴포넌트 가 있는 경우 공유된 상태를 추출하고 이를 전역 싱글톤으로 관리
+  const store = createStore({
+    state () {
+      return {
+        count: 0
+      }
+    },
+    mutations: {
+      increment (state) {
+        state.count++
+      }
     }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-})
+  })
 
-
-    const app = createApp({
-      data() {  return { }     },
-      mounted() {  this.$router.push('/main')     }
-    })
-    app.use(router).use(store);
-    app.mount('#app')
+  const app = createApp({
+    data() {  return { }     },
+    mounted() {  this.$router.push('/')     }
+  })
+  app.use(router).use(store);
+  app.mount('#app')
   </script>
 </body>
 
