@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import UserView from '../views/UserMainView.vue'
+import admin from './adminRouter'
+import user from './userRouter'
+import product from './productRouter'
 
 const routes = [
   {
@@ -8,22 +12,16 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/about',
-    component: () => import(/* webpackChunkName: "about" , webpackPrefetch: true */ '../views/AboutView.vue'),
-    children: [
-      {
-        path: '',
-        component:  () => import('../views/AboutMain.vue'),
-      },
-      {
-        path: 'one',
-        component:   () => import('../views/AboutOne.vue'),
-      },
-      {
-        path: 'two',
-        component: () => import('../views/AboutTwo.vue') ,
-      },
-    ],
+    path: '/user',
+    name:'user',
+    component: UserView,
+    children: [...user, ...product ],
+  }
+  ,
+  {
+    path: '/admin',
+    component: () => import(/* webpackChunkName: "admin" , webpackPrefetch: true */ '../views/AdminMainView'),
+    children: [...admin ],
   }
 ]
 

@@ -1,5 +1,6 @@
 <template>
   <div class="one">
-    <h1>This is an about Main page</h1>
+    <h1>상품정보</h1>
+
   </div>
 </template>
