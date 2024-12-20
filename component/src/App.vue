@@ -26,12 +26,14 @@ export default {
 </script>
   
 <template>
+
   <div>
     {{ count }}
     <component-a msg='hi scott' :count="count" @myEvent="countChange">
       <div>하위컴포넌트에 slot으로 전달</div>
     </component-a>
   </div>
+
 </template>
 
 <style scoped></style>

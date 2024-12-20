@@ -39,9 +39,10 @@ export default {
         console.log(this.$parent.count)
     }
 }
-</script>
+</script> 
 <template>
     <div>
+
         <div>component A 입니다. {{msg}}</div>
         <div>부모에게서 받은 데이터 {{count}}</div>
         <div>inject: {{provideMsg}}</div>
@@ -51,5 +52,6 @@ export default {
         <button @click="countChange">커스턴이벤트로 데이터 전달</button>
         <button @click="idChange">프로바이더 리엑티브</button>
         <button @click="increment">store변경</button>
+
     </div>
 </template>
