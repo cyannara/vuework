@@ -1,4 +1,26 @@
-    //data : input 태크, todo list
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="todo.css" rel="stylesheet" />
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <div id="myDIV" class="header">
+    <h2 style="margin:5px">My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title..." v-model="inputTodo">
+    <span class="addBtn" v-on:click="todoInsert">Add</span>
+    </div>
+    <ul id="myUL">
+        <li v-for="(todo, index) in todos" v-bind:class="{checked :todo.todoyn }" @click="todoChange(index)">
+            {{todo.contents}}<span class="close" v-on:click="todoDelete(index)">×</span></li>
+    </ul>
+    {{remaining}} / {{todos.length}} 건 처리 
+    <button type="button" @click="todoDoneDelete">처리완료삭제</button>
+</div>
+<script>
+     //data : input 태크, todo list
 
     // 닫기버튼 추가
     // 닫기 이벤트
@@ -72,3 +94,6 @@
     })    
     //mount vue
     const mountedApp = app.mount('#app')
+</script>
+</body>
+</html>
